@@ -22,6 +22,7 @@ def Chamar_Janela_criptografia():
                 
                 else:
                     msg_cript = criptografar(entry_mensagem.get(),entry_senha.get())
+                    messagebox.showinfo("", "Criptografia gerada!")
             except:
                 pass
             
@@ -34,7 +35,7 @@ def Chamar_Janela_criptografia():
                 entry_mensagem_cod.insert(END,msg_cript)
             except:
                 pass
-            messagebox.showinfo("", "Criptografia gerada!")
+           
 
         def chamar_bt_copiar():
             try:
