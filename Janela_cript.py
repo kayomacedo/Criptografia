@@ -42,6 +42,7 @@ def Chamar_Janela_criptografia():
                 msg = entry_mensagem_cod.get('1.0', 'end')
                 janela.clipboard_clear()
                 janela.clipboard_append(msg)
+                messagebox.showinfo("", "Copiado!")
 
                 if(len(janela.clipboard_get()) <76):
                     messagebox.showerror("","Criptografia precisa ser gerada!")
@@ -54,6 +55,22 @@ def Chamar_Janela_criptografia():
             Janela_descrip.Chamar_Janela_decriptpgrafia()
         
 
+
+    #Largura Janela
+    w = 500
+    #Altura Janela
+    h =500
+    #Altura do display (pixel)
+    monitor_height = janela.winfo_screenheight()
+    #Largura do display (pixel)
+    monitor_width = janela.winfo_screenwidth()
+
+    #Posicionando no meio
+    posx = int((monitor_height/2) - (h/2))
+    posy = int((monitor_width/2 )- (w/2))
+
+    #Criando e posicionando no tkinter
+    janela.geometry(f"{w}x{h}+{posy}+{posx}")
 
     janela.geometry("500x500")
     janela.resizable(False,False)
@@ -83,7 +100,7 @@ def Chamar_Janela_criptografia():
     entry_mensagem.place(relx=0.3,rely=0.2,relwidth=0.5)
 
     lb_senha =Label(janela,text="Senha: ",font=({35}),background="#FFDAB9")
-    lb_senha.place(relx=0.08,rely=0.3)
+    lb_senha.place(relx=0.18,rely=0.3)
 
     entry_senha =Entry(janela,background="#8B4513",fg="#E0FFFF")
     entry_senha.place(relx=0.3,rely=0.3,relwidth=0.5)
